@@ -1,0 +1,14 @@
+<ng-container [ngSwitch]="type">
+  <h1 [className]="className"  [ngClass]="['text__h1', getClassName]" *ngSwitchCase="TextEnum.H1"><ng-container [ngTemplateOutlet]="content"/></h1>
+  <h2 [ngClass]="['text__h2', getClassName]" *ngSwitchCase="TextEnum.H2"><ng-container [ngTemplateOutlet]="content"/></h2>
+  <h3 [ngClass]="['text__h3', getClassName]" *ngSwitchCase="TextEnum.H3"><ng-container [ngTemplateOutlet]="content"/></h3>
+  <h4 [ngClass]="['text__h4', getClassName]" *ngSwitchCase="TextEnum.H4"><ng-container [ngTemplateOutlet]="content"/></h4>
+  <h5 [ngClass]="['text__h5', getClassName]" *ngSwitchCase="TextEnum.H5"><ng-container [ngTemplateOutlet]="content"/></h5>
+  <h6 [ngClass]="['text__h6', getClassName]" *ngSwitchCase="TextEnum.H6"><ng-container [ngTemplateOutlet]="content"/></h6>
+  <p [ngClass]="['text__p', getClassName]" *ngSwitchDefault><ng-container [ngTemplateOutlet]="content"/></p>
+</ng-container>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>
+

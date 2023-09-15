@@ -1,0 +1,18 @@
+<mat-form-field class="input">
+  <mat-label>{{label}}</mat-label>
+  <input
+    matInput
+    type="email"
+    [formControl]="control"
+    [placeholder]="placeholder"
+  >
+  <mat-error *ngIf="control.hasError('required')">
+    Please enter a {{getText}}
+  </mat-error>
+  <mat-error *ngIf="control.hasError('minlength')">
+    Field {{getText}} is not long enough
+  </mat-error>
+  <mat-error *ngIf="control.hasError('email')">
+    Please enter a valid email address
+  </mat-error>
+</mat-form-field>

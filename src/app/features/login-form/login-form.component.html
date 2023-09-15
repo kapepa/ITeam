@@ -1,0 +1,25 @@
+<mat-card class="login-form">
+  <mat-card-header>
+    <app-text class="login-form__h" [type]="TextEnum.H1">Form</app-text>
+  </mat-card-header>
+  <form class="login-form__shape" (ngSubmit)="onSubmit()">
+    <app-input
+      label="First Name"
+      [control]="firstName"
+      placeholder="Your First Name"
+    />
+    <app-input
+      label="Last Name"
+      [control]="lastName"
+      placeholder="Your Last Name"
+    />
+    <app-input
+      label="Email"
+      [control]="email"
+      placeholder="Your email"
+    />
+    <app-datepicker/>
+    <app-button [color]="isDisabled" [type]="BtnTypeEnum.Submit">Send</app-button>
+  </form>
+</mat-card>
+

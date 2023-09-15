@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {TextEnum} from "../../utility/const/TextEnum/TextEnum";
+import {TextEnum} from "../../utility/const/TextEnum";
 
 @Component({
   selector: 'app-text',

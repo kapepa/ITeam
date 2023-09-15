@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from "./Home/home.component";
 import { Error404Component } from "./Error404/error404.component";
 import { SharedModule } from "../shared/shared.module";
+import {WidgetsModule} from "../widgets/widgets.module";
+import {FeaturesModule} from "../features/features.module";
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { SharedModule } from "../shared/shared.module";
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    WidgetsModule,
+    FeaturesModule,
   ]
 })
 export class PagesModule { }

@@ -1,3 +1,47 @@
-<button mat-fab extended>
-  Home
-</button>
+<ng-container *ngIf="!!href; else Btn" ]>
+  <a
+    [href]="href"
+    mat-raised-button
+  ><ng-container [ngTemplateOutlet]="content"/></a>
+</ng-container>
+
+<ng-template [ngSwitch]="color" #Btn>
+  <button
+    *ngSwitchCase="BtnColor.Primary"
+    [type]="type"
+    mat-raised-button
+    color="primary"
+  ><ng-container [ngTemplateOutlet]="content"/></button>
+  <button
+    *ngSwitchCase="BtnColor.Accent"
+    [type]="type"
+    mat-raised-button
+    color="accent"
+  ><ng-container [ngTemplateOutlet]="content"/></button>
+  <button
+    *ngSwitchCase="BtnColor.Warn"
+    [type]="type"
+    mat-raised-button
+    color="warn"
+  ><ng-container [ngTemplateOutlet]="content"/></button>
+  <button
+    *ngSwitchCase="BtnColor.Disabled"
+    [type]="type"
+    mat-raised-button
+    disabled
+  ><ng-container [ngTemplateOutlet]="content"/></button>
+  <button
+    *ngSwitchCase="BtnColor.Basic"
+    [type]="type"
+    mat-raised-button
+  ><ng-container [ngTemplateOutlet]="content"/></button>
+  <button
+    *ngSwitchDefault
+    [type]="type"
+    mat-raised-button
+  ><ng-container [ngTemplateOutlet]="content"/></button>
+</ng-template>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

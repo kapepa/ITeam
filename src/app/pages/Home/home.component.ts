@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {TextEnum} from "../../utility/const/TextEnum/TextEnum";
+import {TextEnum} from "../../utility/const/TextEnum";
+import {BtnColorEnum} from "../../utility/const/BtnColorEnum";
 
 @Component({
   selector: 'app-home',
@@ -9,4 +10,7 @@ import {TextEnum} from "../../utility/const/TextEnum/TextEnum";
 export class HomeComponent {
   title = 'Home';
   protected readonly TextEnum = TextEnum;
+  protected readonly BtnColorEnum = BtnColorEnum;
+
+
 }

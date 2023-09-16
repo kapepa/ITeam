@@ -18,8 +18,29 @@
       [control]="email"
       placeholder="Your email"
     />
-    <app-datepicker/>
-    <app-button [color]="isDisabled" [type]="BtnTypeEnum.Submit">Send</app-button>
+    <app-datepicker
+      label="Birth day"
+      [control]="datepicker"
+    />
+    <app-select
+      label="Framework"
+      [control]="framework"
+      placeholder="Your framework"
+      [options]="optionsFramework"
+      [disabled]="true"
+    />
+    <app-select
+      label="Version"
+      [control]="version"
+      placeholder="Your framework version"
+      [options]="optionsVersion"
+      [disabled]="!!framework.value"
+    />
+    <app-hobby-list
+      [control]="hobby"
+    />
+    <app-button [type]="BtnTypeEnum.Submit">Send</app-button>
+<!--    <app-button [color]="isDisabled" [type]="BtnTypeEnum.Submit">Send</app-button>-->
   </form>
 </mat-card>
 

@@ -11,5 +11,6 @@ export class ButtonComponent {
   protected readonly BtnColor = BtnColorEnum;
   @Input() href!: string;
   @Input() color: BtnColorEnum = BtnColorEnum.Basic;
-  @Input() type: BtnTypeEnum = BtnTypeEnum.Button
+  @Input() type: BtnTypeEnum = BtnTypeEnum.Button;
+  @Input() width: boolean = false
 }

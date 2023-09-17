@@ -1,5 +1,25 @@
 <app-container class="home__container" [height]="true">
   <div class="home">
-    <app-login-form class="home__login-form"/>
+    <ng-container [ngSwitch]="true" >
+
+      <ng-container *ngSwitchCase="isLoading">
+        <mat-spinner/>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="!!isError">
+        <app-text [type]="TextEnum.H3">{{isError}}</app-text>
+      </ng-container>
+
+      <ng-container *ngSwitchDefault>
+        <app-login-form
+          class="home__login-form"
+          (profileData)="formDate($event)"
+          [isLoading]="isLoading"
+        />
+        <app-timer/>
+      </ng-container>
+
+    </ng-container>
+
   </div>
 </app-container>

@@ -11,34 +11,45 @@
     [type]="type"
     mat-raised-button
     color="primary"
+    [ngClass]="{ 'button__width': width }"
   ><ng-container [ngTemplateOutlet]="content"/></button>
   <button
     *ngSwitchCase="BtnColor.Accent"
     [type]="type"
     mat-raised-button
     color="accent"
+    class="button"
+    [ngClass]="{ 'button__width': width }"
   ><ng-container [ngTemplateOutlet]="content"/></button>
   <button
     *ngSwitchCase="BtnColor.Warn"
     [type]="type"
     mat-raised-button
     color="warn"
+    class="button"
+    [ngClass]="{ 'button__width': width }"
   ><ng-container [ngTemplateOutlet]="content"/></button>
   <button
     *ngSwitchCase="BtnColor.Disabled"
     [type]="type"
     mat-raised-button
     disabled
+    class="button"
+    [ngClass]="{ 'button__width': width }"
   ><ng-container [ngTemplateOutlet]="content"/></button>
   <button
     *ngSwitchCase="BtnColor.Basic"
     [type]="type"
     mat-raised-button
+    class="button"
+    [ngClass]="{ 'button__width': width }"
   ><ng-container [ngTemplateOutlet]="content"/></button>
   <button
     *ngSwitchDefault
     [type]="type"
     mat-raised-button
+    class="button"
+    [ngClass]="{ 'button__width': width }"
   ><ng-container [ngTemplateOutlet]="content"/></button>
 </ng-template>
 

@@ -11,6 +11,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { NgIf } from "@angular/common";
 import { WidgetsModule } from "./widgets/widgets.module";
 import { FeaturesModule } from "./features/features.module";
+import { EntitiesModule } from "./entities/entities.module";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FeaturesModule } from "./features/features.module";
     WidgetsModule,
     FeaturesModule,
     PagesModule,
+    EntitiesModule,
     MatFormFieldModule,
     NgIf,
   ],

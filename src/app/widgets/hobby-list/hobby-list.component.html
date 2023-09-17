@@ -1,1 +1,33 @@
-<app-hobby/>
+<div class="hobby-list">
+  <ng-container *ngFor="let hobby of hobbyList; let i = index;" >
+    <div class="hobby-list__unit" >
+      <app-input
+        [control]="controlsName(hobby)"
+        label="Hobby name"
+      />
+      <app-select
+        [control]="controlsDuration(hobby)"
+        label="Duration"
+        [options]="selectDuration"
+        [disabled]="isDisabled(hobby)"
+      />
+      <ng-container *ngIf="i === 0; else del">
+        <app-button
+          (click)="onAddNewHobby()"
+          [color]="BtnColorEnum.Primary"
+          class="hobby-list__del"
+        >Add</app-button>
+      </ng-container>
+      <ng-template #del>
+        <app-button
+          [color]="BtnColorEnum.Accent"
+          [width]="true"
+          (click)="onDeleteHobby(i)"
+          class="hobby-list__del"
+        >Del</app-button>
+      </ng-template>
+    </div>
+  </ng-container>
+</div>
+
+

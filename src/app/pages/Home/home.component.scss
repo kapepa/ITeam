@@ -5,8 +5,9 @@
   justify-content: center;
   padding: 20px 0;
   height: 100%;
+  row-gap: 40px;
   &__login-form{
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
   }
 }

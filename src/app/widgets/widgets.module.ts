@@ -9,23 +9,24 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { SelectComponent } from './select/select.component';
 import { MatSelectModule} from "@angular/material/select";
-import { HobbyComponent } from './hobby/hobby.component';
 import { HobbyListComponent } from './hobby-list/hobby-list.component';
+import { SharedModule } from "../shared/shared.module";
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
     InputComponent,
     DatepickerComponent,
     SelectComponent,
-    HobbyComponent,
     HobbyListComponent,
+    TimerComponent,
   ],
   exports: [
     InputComponent,
     DatepickerComponent,
     SelectComponent,
-    HobbyComponent,
     HobbyListComponent,
+    TimerComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +37,7 @@ import { HobbyListComponent } from './hobby-list/hobby-list.component';
     MatNativeDateModule,
     MatFormFieldModule,
     MatSelectModule,
+    SharedModule,
   ]
 })
 export class WidgetsModule { }

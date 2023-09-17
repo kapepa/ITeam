@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HobbyComponent } from './hobby.component';
+import { TimerComponent } from './timer.component';
 
-describe('HobbyComponent', () => {
-  let component: HobbyComponent;
-  let fixture: ComponentFixture<HobbyComponent>;
+describe('TimerComponent', () => {
+  let component: TimerComponent;
+  let fixture: ComponentFixture<TimerComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HobbyComponent]
+      declarations: [TimerComponent]
     });
-    fixture = TestBed.createComponent(HobbyComponent);
+    fixture = TestBed.createComponent(TimerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,15 @@
+.hobby-list{
+  display: flex;
+  flex-direction: column;
+  &__unit{
+    display: flex;
+    column-gap: 16px;
+  }
+  &__del{
+    width: 100%;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

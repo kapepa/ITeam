@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from "./Home/home.component";
 import { Error404Component } from "./Error404/error404.component";
 import { SharedModule } from "../shared/shared.module";
-import {WidgetsModule} from "../widgets/widgets.module";
-import {FeaturesModule} from "../features/features.module";
+import { WidgetsModule } from "../widgets/widgets.module";
+import { FeaturesModule } from "../features/features.module";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {FeaturesModule} from "../features/features.module";
     SharedModule,
     WidgetsModule,
     FeaturesModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class PagesModule { }

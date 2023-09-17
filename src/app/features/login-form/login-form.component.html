@@ -37,10 +37,11 @@
       [disabled]="!!framework.value"
     />
     <app-hobby-list
-      [control]="hobby"
+      [formHobby]="hobby"
+      (addHobby)="addHobby()"
+      (deleteHobby)="deleteHobby($event)"
     />
-    <app-button [type]="BtnTypeEnum.Submit">Send</app-button>
-<!--    <app-button [color]="isDisabled" [type]="BtnTypeEnum.Submit">Send</app-button>-->
+    <app-button [color]="isDisabled" [type]="BtnTypeEnum.Submit">Send</app-button>
   </form>
 </mat-card>
 

@@ -1,6 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {BtnColorEnum, BtnTypeEnum, FormHobbyProps, HobbyDto, TechnologyType, TextEnum} from "../../utility";
+import {
+  BtnColorEnum,
+  BtnTypeEnum,
+  FormHobbyProps,
+  HobbyDto, LoginInDto,
+  TechnologyType,
+  TextEnum,
+} from "../../utility";
+
 
 interface FormGroupProps {
   firstName: FormControl<string | null>,
@@ -22,6 +30,8 @@ export class LoginFormComponent {
   protected readonly BtnTypeEnum = BtnTypeEnum;
   protected readonly TextEnum = TextEnum;
   protected readonly BtnColorEnum = BtnColorEnum;
+  @Input() isLoading: boolean = false;
+  @Output() profileData: EventEmitter<LoginInDto> = new EventEmitter<LoginInDto>();
 
   frameworks: {[key in TechnologyType]: string[]} = {
     angular: ['1.1.1', '1.2.1', '1.3.3'],
@@ -40,7 +50,13 @@ export class LoginFormComponent {
   });
 
   onSubmit () {
-    console.log(this.profileForm)
+    const { valid, value } = this.profileForm
+
+    if(valid) {
+      const dateOfBirth: string = new Date(value.dateOfBirth!).toLocaleDateString();
+      this.profileData.emit({...value, dateOfBirth} as LoginInDto)
+      this.profileForm.reset();
+    }
   }
 
   loadCarsArray(hobby: HobbyDto[]): FormGroup<FormHobbyProps>[] {
@@ -54,8 +70,19 @@ export class LoginFormComponent {
     });
   }
 
+  addHobby (): void {
+    const formHobby: FormGroup<FormHobbyProps> = this.createHobbyFormGroup({ name: "", duration: ""});
+    const hobby: FormArray<FormGroup<FormHobbyProps>>  = this.hobby;
+    hobby.push(formHobby);
+  }
+
+  deleteHobby (index: number): void {
+    const hobby: FormArray<FormGroup<FormHobbyProps>>  = this.hobby;
+    if(hobby.value.length !== 1) hobby.removeAt(index);
+  }
+
   get isDisabled () {
-    return this.profileForm.valid ? BtnColorEnum.Primary : BtnColorEnum.Disabled
+    return this.profileForm.valid || this.isLoading ? BtnColorEnum.Primary : BtnColorEnum.Disabled
   }
 
   get firstName () {

@@ -1,0 +1,17 @@
+.timer{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  &__counter{
+    display: flex;
+    justify-content: center;
+  }
+  &__basement{
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+  }
+  &__btn{
+    width: 120px;
+  }
+}

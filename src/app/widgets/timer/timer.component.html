@@ -1,1 +1,32 @@
-<p>timer works!</p>
+<div class="timer">
+  <app-text
+    class="timer__counter"
+    [type]="TextEnum.H2"
+  >{{counter}}</app-text>
+  <div class="timer__basement">
+    <app-button
+      class="timer__btn"
+      [width]="true"
+      [color]="BtnColorEnum.Primary"
+      (click)="onStartTimer()"
+    >Start</app-button>
+    <app-button
+      class="timer__btn"
+      [width]="true"
+      [color]="BtnColorEnum.Accent"
+      (click)="onStopTimer()"
+    >Stop</app-button>
+    <app-button
+      class="timer__btn"
+      [width]="true"
+      [color]="BtnColorEnum.Warn"
+      (click)="onWaitTimer()"
+    >Wait</app-button>
+    <app-button
+      class="timer__btn"
+      [width]="true"
+      [color]="BtnColorEnum.Basic"
+      (click)="onResetTimer()"
+    >Reset</app-button>
+  </div>
+</div>
